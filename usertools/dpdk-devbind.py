@@ -14,6 +14,10 @@ from os.path import exists, basename
 from os.path import join as path_join
 
 # The PCI base class for all devices
+
+mqnic_class  = {'Class': '05', 'Vendor': '1234', 'Device': '1001',
+                 'SVendor': None, 'SDevice': None}
+
 network_class = {'Class': '02', 'Vendor': None, 'Device': None,
                  'SVendor': None, 'SDevice': None}
 acceleration_class = {'Class': '12', 'Vendor': None, 'Device': None,
@@ -75,7 +79,8 @@ cn9k_ree = {'Class': '08', 'Vendor': '177d', 'Device': 'a0f4',
 virtio_blk = {'Class': '01', 'Vendor': "1af4", 'Device': '1001,1042',
                     'SVendor': None, 'SDevice': None}
 
-network_devices = [network_class, cavium_pkx, avp_vnic, ifpga_class]
+network_devices = [network_class, cavium_pkx, avp_vnic, ifpga_class, mqnic_class]
+#network_devices = [network_class, cavium_pkx, avp_vnic, ifpga_class]
 baseband_devices = [acceleration_class]
 crypto_devices = [encryption_class, intel_processor_class]
 dma_devices = [cnxk_dma, hisilicon_dma,
